@@ -165,16 +165,12 @@ namespace MMDPluginInstallManager.Models
             {
                 throw new FileNotFoundException("The MikuMikuDance.exe is not found.");
             }
-            if (CreateSHA1Hash(installPath) != "7dbf4f27d6dd14ce77e2e659a69886e3b6739b56")
-            {
-                throw new InvalidOperationException(
-                    "The MikuMikuDance.exe is wrong.\nThis program is only supported for 'MMD ver9.26 x64'.");
-            }
             _installPath = Directory.GetParent(installPath).FullName;
         }
 
         private async Task<MMDPluginData[]> GetPackageList()
         {
+            var text = "";
             try
             {
                 using (var wc = new WebClient())
@@ -182,13 +178,13 @@ namespace MMDPluginInstallManager.Models
                     await wc.DownloadFileTaskAsync(
                                                    "https://raw.githubusercontent.com/oigami/MMDPluginInstallManager/master/MMDPluginInstallManager/package_list.json",
                                                    @"package_list.json");
+                    text = File.ReadAllText("package_list.json");
                 }
             }
             catch (Exception)
             {
-                // ignored
+                text = "[\n  {\n    \"Title\": \"MMDPlugin\",\n    \"URL\": \"https://bowlroll.net/file/121761\",\n    \"Version\": 0.41,\n    \"Readme\": \"MMDPlugin_Readme.txt\",\n    \"SHA1Hash\": \"682cc15082b3db2cff6808480d12f4e92413e085\",\n    \"InstallDir\": [\n      [ \"d3d9.dll\", \"\" ],\n      [ \"d3dx9_43.dll\", \"\" ],\n      [ \"MMDPlugin.dll\", \"\" ],\n      [ \"MMDPlugin_Readme.txt\", \"plugin/MMDPlugin/\" ]\n    ]\n  },\n  {\n    \"Title\": \"MMDUtility\",\n    \"URL\": \"https://bowlroll.net/file/121762\",\n    \"Version\": 0.11,\n    \"Readme\": \"MMDUtility_Readme.txt\",\n    \"SHA1Hash\": \"769e0e5b0faf20328bcf3acc5e6a4e3129c80504\",\n    \"InstallDir\": [\n      [ \"plugin/\", \"\" ],\n      [ \"MMDUtility_Readme.txt\", \"plugin/MMDUtility\" ]\n    ]\n  },\n  {\n    \"Title\": \"Effekseer for MMD\",\n    \"URL\": \"https://bowlroll.net/file/121167\",\n    \"Version\": 0.25,\n    \"Readme\": \"EffekseerForMMD_Readme.txt\",\n    \"SHA1Hash\": \"ab16e90d4b6c7bafb4505589c3ba7de864e55121\",\n    \"InstallDir\": [\n      [ \"plugin/\", \"\" ],\n      [ \"EffekseerForMMD_Readme.txt\", \"plugin/EffekseerForMMD\" ]\n\n    ]\n  },\n  {\n    \"Title\": \"MikuMikuEffect\",\n    \"URL\": \"https://bowlroll.net/file/35013\",\n    \"Version\": 0.37,\n    \"Readme\": \"MMEffect_x64_v037/MMEffect.txt\",\n    \"SHA1Hash\": \"c9304108d61517e9ba47e05118dda1df6063c14c\",\n    \"InstallDir\": [\n      [ \"MMEffect_x64_v037/\", \"../plugin/mme/\" ]\n    ]\n  },\n  {\n    \"Title\": \"MMAccel\",\n    \"URL\": \"https://bowlroll.net/file/89669\",\n    \"Version\": 1.59,\n    \"Readme\": \"MMAccel_64_v1_59/mmaccel_Readme.txt\",\n    \"SHA1Hash\": \"c2748304aadbf89b961aef6f79f335679c5f9101\",\n    \"InstallDir\": [\n      [ \"MMAccel_64_v1_59/mmaccel/\", \"../../plugin/mmaccel/\" ],\n      [ \"MMAccel_64_v1_59/mmaccel_Readme.txt\", \"../plugin/mmaccel/\" ]\n    ]\n  }\n]";
             }
-            var text = File.ReadAllText("package_list.json");
             return JsonConvert.DeserializeObject<MMDPluginData[]>(text);
         }
 
