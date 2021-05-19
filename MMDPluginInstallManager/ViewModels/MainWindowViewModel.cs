@@ -139,13 +139,13 @@ namespace MMDPluginInstallManager.ViewModels
             };
 
             // mmdを選択してもらう
-            MessageBox.Show("Choose MikuMikuDance.exe (ver9.26 x64).");
+            MessageBox.Show("Choose MikuMikuDance.exe (ver9.32 x64).");
             var ofd = new OpenFileDialog
             {
                 FileName = "MikuMikuDance.exe",
                 Filter = "exe file(*.exe)|*.exe|all file(*.*)|*.*",
                 FilterIndex = 1,
-                Title = "Choose MikuMikuDance.exe (ver9.26 x64)"
+                Title = "Choose MikuMikuDance.exe (ver9.32 x64)"
             };
 
 
