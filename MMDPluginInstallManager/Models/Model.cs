@@ -176,14 +176,24 @@ namespace MMDPluginInstallManager.Models
                 using (var wc = new WebClient())
                 {
                     await wc.DownloadFileTaskAsync(
+<<<<<<< HEAD
                                                    "https://raw.githubusercontent.com/PTOM76/MMDPluginInstallManager/master/MMDPluginInstallManager/package_list.json",
                                                    @"package_list.json");
+=======
+                                                   "https://raw.githubusercontent.com/oigami/MMDPluginInstallManager/master/MMDPluginInstallManager/package_list.json",
+                                                   @"package_list.json");
+>>>>>>> b39bf1ceae1b8ad71c3e3c3ff09999926e45d353
                     text = File.ReadAllText("package_list.json");
                 }
             }
             catch (Exception)
+<<<<<<< HEAD
             {
                 text = "[{\"Title\":\"MMDPlugin\",\"URL\":\"https://bowlroll.net/file/121761\",\"Version\":0.41,\"Readme\":\"MMDPlugin_Readme.txt\",\"SHA1Hash\":\"682cc15082b3db2cff6808480d12f4e92413e085\",\"InstallDir\":[[\"d3d9.dll\",\"\"],[\"d3dx9_43.dll\",\"\"],[\"MMDPlugin.dll\",\"\"],[\"MMDPlugin_Readme.txt\",\"plugin/MMDPlugin/\"]]},{\"Title\":\"MMDUtility\",\"URL\":\"https://bowlroll.net/file/270417\",\"Version\":0.11,\"Readme\":\"MMDUtility_Readme.txt\",\"SHA1Hash\":\"769e0e5b0faf20328bcf3acc5e6a4e3129c80504\",\"InstallDir\":[[\"plugin/\",\"\"],[\"MMDUtility_Readme.txt\",\"plugin/MMDUtility\"]]},{\"Title\":\"EffekseerforMMD\",\"URL\":\"https://bowlroll.net/file/121167\",\"Version\":0.25,\"Readme\":\"EffekseerForMMD_Readme.txt\",\"SHA1Hash\":\"ab16e90d4b6c7bafb4505589c3ba7de864e55121\",\"InstallDir\":[[\"plugin/\",\"\"],[\"EffekseerForMMD_Readme.txt\",\"plugin/EffekseerForMMD\"]]},{\"Title\":\"MikuMikuEffect\",\"URL\":\"https://bowlroll.net/file/35013\",\"Version\":0.37,\"Readme\":\"MMEffect_x64_v037/MMEffect.txt\",\"SHA1Hash\":\"c9304108d61517e9ba47e05118dda1df6063c14c\",\"InstallDir\":[[\"MMEffect_x64_v037/\",\"../plugin/mme/\"]]},{\"Title\":\"MMAccel\",\"URL\":\"https://bowlroll.net/file/89669\",\"Version\":1.60,\"Readme\":\"MMAccel_64_v1_60/mmaccel_Readme.txt\",\"SHA1Hash\":\"aa89b9c2474d8227ca2b6ccd0120a38a491e40aa\",\"InstallDir\":[[\"MMAccel_64_v1_60/mmaccel/\",\"../../plugin/mmaccel/\"],[\"MMAccel_64_v1_60/mmaccel_Readme.txt\",\"../plugin/mmaccel/\"]]},{\"Title\":\"MMPlus\",\"URL\":\"https://bowlroll.net/file/192172\",\"Version\":\"1.6.5.14\",\"Readme\":\"MMPlus_ver1.6.5.14/MMPlus_readme.txt\",\"SHA1Hash\":\"bbad109b1bd1855aebc216c9f155f24431be83d6\",\"InstallDir\":[[\"MMPlus_ver1.6.5.14/\",\"../plugin/MMPlus/\"]]},{\"Title\":\"MMDDiscordRPC\",\"URL\":\"https://bowlroll.net/file/270406\",\"Version\":1.0,\"Readme\":\"readme.md\",\"SHA1Hash\":\"161ed4b685d445337cde92092612fcb546c23bd0\",\"InstallDir\":[[\"lib/\",\"../plugin/MMDPluginDLL/\"],[\"MMDDiscordRPC.dll\",\"plugin/MMDPluginDLL/\"],[\"readme.md\",\"plugin/MMDPluginDLL/\"]]},{\"Title\":\"MMDPluginDLL\",\"URL\":\"https://bowlroll.net/file/270418\",\"Version\":\"1.0.0.1\",\"Readme\":\"README.md\",\"SHA1Hash\":\"54bb8b28327c78e1593c049fba9b3fd7973bbc98\",\"InstallDir\":[[\"qSetCameraFollowBone.dll\",\"plugin/MMDPluginDLL/\"],[\"qDispPlayingFrame.dll\",\"plugin/MMDPluginDLL/\"],[\"qCameraModeUndo.ini\",\"plugin/MMDPluginDLL/\"],[\"qCameraModeUndo.dll\",\"plugin/MMDPluginDLL/\"],[\"README.md\",\"plugin/MMDPluginDLL/\"]]}]";
+=======
+            {
+                text = "[\n  {\n    \"Title\": \"MMDPlugin\",\n    \"URL\": \"https://bowlroll.net/file/121761\",\n    \"Version\": 0.41,\n    \"Readme\": \"MMDPlugin_Readme.txt\",\n    \"SHA1Hash\": \"682cc15082b3db2cff6808480d12f4e92413e085\",\n    \"InstallDir\": [\n      [ \"d3d9.dll\", \"\" ],\n      [ \"d3dx9_43.dll\", \"\" ],\n      [ \"MMDPlugin.dll\", \"\" ],\n      [ \"MMDPlugin_Readme.txt\", \"plugin/MMDPlugin/\" ]\n    ]\n  },\n  {\n    \"Title\": \"MMDUtility\",\n    \"URL\": \"https://bowlroll.net/file/121762\",\n    \"Version\": 0.11,\n    \"Readme\": \"MMDUtility_Readme.txt\",\n    \"SHA1Hash\": \"769e0e5b0faf20328bcf3acc5e6a4e3129c80504\",\n    \"InstallDir\": [\n      [ \"plugin/\", \"\" ],\n      [ \"MMDUtility_Readme.txt\", \"plugin/MMDUtility\" ]\n    ]\n  },\n  {\n    \"Title\": \"Effekseer for MMD\",\n    \"URL\": \"https://bowlroll.net/file/121167\",\n    \"Version\": 0.25,\n    \"Readme\": \"EffekseerForMMD_Readme.txt\",\n    \"SHA1Hash\": \"ab16e90d4b6c7bafb4505589c3ba7de864e55121\",\n    \"InstallDir\": [\n      [ \"plugin/\", \"\" ],\n      [ \"EffekseerForMMD_Readme.txt\", \"plugin/EffekseerForMMD\" ]\n\n    ]\n  },\n  {\n    \"Title\": \"MikuMikuEffect\",\n    \"URL\": \"https://bowlroll.net/file/35013\",\n    \"Version\": 0.37,\n    \"Readme\": \"MMEffect_x64_v037/MMEffect.txt\",\n    \"SHA1Hash\": \"c9304108d61517e9ba47e05118dda1df6063c14c\",\n    \"InstallDir\": [\n      [ \"MMEffect_x64_v037/\", \"../plugin/mme/\" ]\n    ]\n  },\n  {\n    \"Title\": \"MMAccel\",\n    \"URL\": \"https://bowlroll.net/file/89669\",\n    \"Version\": 1.59,\n    \"Readme\": \"MMAccel_64_v1_59/mmaccel_Readme.txt\",\n    \"SHA1Hash\": \"c2748304aadbf89b961aef6f79f335679c5f9101\",\n    \"InstallDir\": [\n      [ \"MMAccel_64_v1_59/mmaccel/\", \"../../plugin/mmaccel/\" ],\n      [ \"MMAccel_64_v1_59/mmaccel_Readme.txt\", \"../plugin/mmaccel/\" ]\n    ]\n  }\n]";
+>>>>>>> b39bf1ceae1b8ad71c3e3c3ff09999926e45d353
             }
             return JsonConvert.DeserializeObject<MMDPluginData[]>(text);
         }
@@ -288,4 +298,8 @@ namespace MMDPluginInstallManager.Models
             }
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b39bf1ceae1b8ad71c3e3c3ff09999926e45d353
