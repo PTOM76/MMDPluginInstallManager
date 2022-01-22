@@ -32,12 +32,12 @@ namespace MMDPluginInstallManager.Models
 
         public string URL { get; set; }
 
-        public float Version { get; set; }
+        public string Version { get; set; }
     }
 
     public class MMDPluginPackage
     {
-        public float Version { get; set; }
+        public string Version { get; set; }
 
         public string ReadMeFilePath { get; set; }
 
@@ -220,7 +220,7 @@ namespace MMDPluginInstallManager.Models
                 });
                 if (item.Title == "MMDPlugin")
                 {
-                    mmdPluginVersion = item.Version;
+                    mmdPluginVersion = float.Parse(item.Version);
                 }
             }
             RaisePropertyChanged(nameof(DownloadPluginDic));
@@ -229,7 +229,7 @@ namespace MMDPluginInstallManager.Models
             MMDPluginPackage mmdPluginPackage;
             if (MMDInstalledPluginPackage.TryGetValue("MMDPlugin", out mmdPluginPackage))
             {
-                if (Math.Abs(mmdPluginPackage.Version - mmdPluginVersion) < 1e-5f)
+                if (Math.Abs(float.Parse(mmdPluginPackage.Version) - mmdPluginVersion) < 1e-5f)
                 {
                     IsInstalledMMDPlugin = true;
                 }
@@ -248,7 +248,7 @@ namespace MMDPluginInstallManager.Models
 
         public class DownloadPluginData
         {
-            public float LatestVersion { get; set; }
+            public string LatestVersion { get; set; }
 
             public string Title { get; set; }
 

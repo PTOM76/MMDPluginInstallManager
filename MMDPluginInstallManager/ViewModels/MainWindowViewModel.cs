@@ -128,7 +128,7 @@ namespace MMDPluginInstallManager.ViewModels
                             _DownloadPluginList.Add(new PluginData
                             {
                                 LatestVersion = v.LatestVersion,
-                                NowVersion = package?.Version ?? -1,
+                                NowVersion = package?.Version ?? "-",
                                 Title = v.Title,
                                 ReadMeFilePath = package?.ReadMeFilePath,
                                 Url = v.Url
@@ -173,9 +173,9 @@ namespace MMDPluginInstallManager.ViewModels
 
         public class PluginData
         {
-            public float NowVersion { get; set; }
+            public string NowVersion { get; set; }
 
-            public float LatestVersion { get; set; }
+            public string LatestVersion { get; set; }
 
             public string Title { get; set; }
 
@@ -200,7 +200,7 @@ namespace MMDPluginInstallManager.ViewModels
             }
         }
 
-        public bool CanUninstall() => SelectedPluginData != null && SelectedPluginData.NowVersion > 0.0;
+        public bool CanUninstall() => SelectedPluginData != null && SelectedPluginData.NowVersion != "-";
 
         public async void Uninstall()
         {
