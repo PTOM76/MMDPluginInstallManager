@@ -14,11 +14,7 @@
   },
   {
     "Title": "MMDUtility",
-<<<<<<< HEAD
     "URL": "https://bowlroll.net/file/270417",
-=======
-    "URL": "https://bowlroll.net/file/121762",
->>>>>>> b39bf1ceae1b8ad71c3e3c3ff09999926e45d353
     "Version": 0.11,
     "Readme": "MMDUtility_Readme.txt",
     "SHA1Hash": "769e0e5b0faf20328bcf3acc5e6a4e3129c80504",
@@ -52,7 +48,6 @@
   {
     "Title": "MMAccel",
     "URL": "https://bowlroll.net/file/89669",
-<<<<<<< HEAD
     "Version": 1.60,
     "Readme": "MMAccel_64_v1_60/mmaccel_Readme.txt",
     "SHA1Hash": "aa89b9c2474d8227ca2b6ccd0120a38a491e40aa",
@@ -95,14 +90,6 @@
       [ "qCameraModeUndo.ini", "plugin/MMDPluginDLL/" ],
       [ "qCameraModeUndo.dll", "plugin/MMDPluginDLL/" ],
       [ "README.md", "plugin/MMDPluginDLL/" ]
-=======
-    "Version": 1.59,
-    "Readme": "MMAccel_64_v1_59/mmaccel_Readme.txt",
-    "SHA1Hash": "c2748304aadbf89b961aef6f79f335679c5f9101",
-    "InstallDir": [
-      [ "MMAccel_64_v1_59/mmaccel/", "../../plugin/mmaccel/" ],
-      [ "MMAccel_64_v1_59/mmaccel_Readme.txt", "../plugin/mmaccel/" ]
->>>>>>> b39bf1ceae1b8ad71c3e3c3ff09999926e45d353
     ]
   }
 ]

@@ -326,8 +326,4 @@ namespace MMDPluginInstallManager.ViewModels
 
         #endregion
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> b39bf1ceae1b8ad71c3e3c3ff09999926e45d353
