@@ -91,5 +91,54 @@
       [ "qCameraModeUndo.dll", "plugin/MMDPluginDLL/" ],
       [ "README.md", "plugin/MMDPluginDLL/" ]
     ]
+  },
+  {
+    "Title": "外部親拡張操作プラグイン",
+    "URL": "https://bowlroll.net/file/295257",
+    "Version": "1.0.1",
+    "Readme": "readme.txt",
+    "SHA1Hash": "0e127d0e5b4fa1ab47d2e0e803f60ab1305489e6",
+    "InstallDir": [
+      [ "外部親拡張操作プラグイン 使い方.xls", "plugin/ExParentControlExtend/" ],
+      [ "qExternalParentControlExtend.dll", "plugin/ExParentControlExtend/" ],
+      [ "qExternalParentControlExtend.ini", "plugin/ExParentControlExtend/" ],
+      [ "NearBoneParentChildrenNames.txt", "plugin/ExParentControlExtend/" ],
+      [ "NearBoneHighLevelNames.txt", "plugin/ExParentControlExtend/" ],
+      [ "NearBoneIndependNames.txt", "plugin/ExParentControlExtend/" ],
+      [ "NearBoneNotUsingNames.txt", "plugin/ExParentControlExtend/" ],
+      [ "readme.txt", "plugin/ExParentControlExtend/" ]
+    ]
+  },
+  {
+    "Title": "補間曲線拡張操作プラグイン",
+    "URL": "https://bowlroll.net/file/297475",
+    "Version": "1.0.0",
+    "Readme": "readme.txt",
+    "SHA1Hash": "6855116dfd51d9a263357233d12e1a24f862dce2",
+    "InstallDir": [
+      [ "qInterpolationCurveExtend.dll", "plugin/qInterpolationCurveExtend/" ],
+      [ "readme.txt", "plugin/qInterpolationCurveExtend/" ]
+    ]
+  },
+  {
+    "Title": "外部親ボーン表示削減プラグイン",
+    "URL": "https://bowlroll.net/file/293216",
+    "Version": "1.0.6",
+    "Readme": "readme.txt",
+    "SHA1Hash": "3376b8c72a1579a459a8cd1578d6961adf763c4b",
+    "InstallDir": [
+      [ "qExternalParentReduce.dll", "plugin/qExternalParentReduce/" ],
+      [ "qExternalParentReduce.ini", "plugin/qExternalParentReduce/" ],
+      [ "readme.txt", "plugin/qExternalParentReduce/" ]
+    ]
+  },
+  {
+    "Title": "MMDAlembic",
+    "URL": "https://bowlroll.net/file/283437",
+    "Version": "2.5",
+    "SHA1Hash": "9cea247491f658ce3a9f1047da789e6ad17c879b",
+    "InstallDir": [
+      [ "MMDAlembic_v2.5/plugin/MMDAlembic/", "plugin/MMDAlembic/" ]
+    ]
   }
 ]
