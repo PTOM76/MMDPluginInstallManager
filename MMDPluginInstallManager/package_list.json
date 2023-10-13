@@ -136,6 +136,7 @@
     "Title": "MMDAlembic",
     "URL": "https://bowlroll.net/file/283437",
     "Version": "2.5",
+    "Readme": "readme.txt",
     "SHA1Hash": "9cea247491f658ce3a9f1047da789e6ad17c879b",
     "InstallDir": [
       [ "MMDAlembic_v2.5/plugin/MMDAlembic/", "plugin/MMDAlembic/" ]
