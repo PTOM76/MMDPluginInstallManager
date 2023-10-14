@@ -14,6 +14,26 @@ using System.Linq.Expressions;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Windows.Markup;
+/* Hello! Put the abbreviation or acronym of your name here, and then use that for further comments. Example: "NG: WHAT IS GOING ON I DON'T KNOW ANYTHING ABOUT WHAT'S GOING ON WHAT DOES THIS DO"
+ * NordGeit = NG
+ * 
+ */
+
+/* NG: Future quests for anyone interested in refining this project further:
+ * Add the ability to choose from where to pull the package_list.json file from, or to load a local one, so that there can be multiple lists available to use. Use something like a config file, perhaps?
+ * Just... Actual error messages, for Odins sake
+ * Disabling the SHA-1 check, if it doesn't nuke everything. Most useful for MMAccel since it might be updated quite frequently.
+ * I'd do them, but I can't code, and it's gonna take quite a while for me to learn enough to implement that kind of stuff here.
+ * 
+ * DeepL-san! I summon you!
+ * これを読んでいる日本人の皆さんはというと...。
+ * MMAccelがプラグインをどのように扱うかを知って、こういうプログラムのアイデアが浮かんだんだけど、実際に形として実装されているのを見ると...。君たちは本当に秘密だらけだね。
+ * 
+ * どうしても日本語訳をつけたいのなら、私は気にしない。好きにしてください。
+ * 私が先駆者になれるくらい強くなるまで、あなたについていきます。
+ * [NG_MSG_END]
+ * 
+ */
 
 namespace MMDPluginInstallManager.Models
 {
@@ -175,6 +195,8 @@ namespace MMDPluginInstallManager.Models
             {
                 using (var wc = new WebClient())
                 {
+                    //NG: Line below fixes the issue where the included json file gets overwritten with an empty one, because it failed to properly negotiate TLS. Thanks, the combined power of StackOverflow and Duke Nukem!
+                    System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                     await wc.DownloadFileTaskAsync(
                                                    "https://raw.githubusercontent.com/PTOM76/MMDPluginInstallManager/master/MMDPluginInstallManager/package_list.json",
                                                    @"package_list.json");
@@ -183,6 +205,7 @@ namespace MMDPluginInstallManager.Models
             }
             catch (Exception)
             {
+                //NG: This is the fallback, hardcoded into the program. Make sure every entry in the package_list.json has all the entries included, even if it has to resort to using a dummy or a bogus one, to prevent this fallback!
                 text = "[{\"Title\":\"MMDPlugin\",\"URL\":\"https://bowlroll.net/file/121761\",\"Version\":0.41,\"Readme\":\"MMDPlugin_Readme.txt\",\"SHA1Hash\":\"682cc15082b3db2cff6808480d12f4e92413e085\",\"InstallDir\":[[\"d3d9.dll\",\"\"],[\"d3dx9_43.dll\",\"\"],[\"MMDPlugin.dll\",\"\"],[\"MMDPlugin_Readme.txt\",\"plugin/MMDPlugin/\"]]},{\"Title\":\"MMDUtility\",\"URL\":\"https://bowlroll.net/file/270417\",\"Version\":0.11,\"Readme\":\"MMDUtility_Readme.txt\",\"SHA1Hash\":\"769e0e5b0faf20328bcf3acc5e6a4e3129c80504\",\"InstallDir\":[[\"plugin/\",\"\"],[\"MMDUtility_Readme.txt\",\"plugin/MMDUtility\"]]},{\"Title\":\"EffekseerforMMD\",\"URL\":\"https://bowlroll.net/file/121167\",\"Version\":0.25,\"Readme\":\"EffekseerForMMD_Readme.txt\",\"SHA1Hash\":\"ab16e90d4b6c7bafb4505589c3ba7de864e55121\",\"InstallDir\":[[\"plugin/\",\"\"],[\"EffekseerForMMD_Readme.txt\",\"plugin/EffekseerForMMD\"]]},{\"Title\":\"MikuMikuEffect\",\"URL\":\"https://bowlroll.net/file/35013\",\"Version\":0.37,\"Readme\":\"MMEffect_x64_v037/MMEffect.txt\",\"SHA1Hash\":\"c9304108d61517e9ba47e05118dda1df6063c14c\",\"InstallDir\":[[\"MMEffect_x64_v037/\",\"../plugin/mme/\"]]},{\"Title\":\"MMAccel\",\"URL\":\"https://bowlroll.net/file/89669\",\"Version\":1.60,\"Readme\":\"MMAccel_64_v1_60/mmaccel_Readme.txt\",\"SHA1Hash\":\"aa89b9c2474d8227ca2b6ccd0120a38a491e40aa\",\"InstallDir\":[[\"MMAccel_64_v1_60/mmaccel/\",\"../../plugin/mmaccel/\"],[\"MMAccel_64_v1_60/mmaccel_Readme.txt\",\"../plugin/mmaccel/\"]]},{\"Title\":\"MMPlus\",\"URL\":\"https://bowlroll.net/file/192172\",\"Version\":\"1.6.5.14\",\"Readme\":\"MMPlus_ver1.6.5.14/MMPlus_readme.txt\",\"SHA1Hash\":\"bbad109b1bd1855aebc216c9f155f24431be83d6\",\"InstallDir\":[[\"MMPlus_ver1.6.5.14/\",\"../plugin/MMPlus/\"]]},{\"Title\":\"MMDDiscordRPC\",\"URL\":\"https://bowlroll.net/file/270406\",\"Version\":1.0,\"Readme\":\"readme.md\",\"SHA1Hash\":\"161ed4b685d445337cde92092612fcb546c23bd0\",\"InstallDir\":[[\"lib/\",\"../plugin/MMDPluginDLL/\"],[\"MMDDiscordRPC.dll\",\"plugin/MMDPluginDLL/\"],[\"readme.md\",\"plugin/MMDPluginDLL/\"]]},{\"Title\":\"MMDPluginDLL\",\"URL\":\"https://bowlroll.net/file/270418\",\"Version\":\"1.0.0.1\",\"Readme\":\"README.md\",\"SHA1Hash\":\"54bb8b28327c78e1593c049fba9b3fd7973bbc98\",\"InstallDir\":[[\"qSetCameraFollowBone.dll\",\"plugin/MMDPluginDLL/\"],[\"qDispPlayingFrame.dll\",\"plugin/MMDPluginDLL/\"],[\"qCameraModeUndo.ini\",\"plugin/MMDPluginDLL/\"],[\"qCameraModeUndo.dll\",\"plugin/MMDPluginDLL/\"],[\"README.md\",\"plugin/MMDPluginDLL/\"]]}]";
             }
             return JsonConvert.DeserializeObject<MMDPluginData[]>(text);
