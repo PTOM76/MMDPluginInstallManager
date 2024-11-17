@@ -140,6 +140,16 @@
     "SHA1Hash": "9cea247491f658ce3a9f1047da789e6ad17c879b",
     "InstallDir": [
       [ "MMDAlembic_v2.5/plugin/MMDAlembic/", "plugin/MMDAlembic/" ]
-    ]
+    ],
+    {
+      "Title": "MMDCloth",
+      "URL": "https://bowlroll.net/file/316244",
+      "Version": "4.6",
+      "Readme": "readme.txt",
+      "SHA1Hash": "1cc1f373de4a0a4e01b2e5ef42d20598206203e2",
+      "InstallDir": [
+        [ "MMDCloth_v4.6/toMMD/plugin/MMDCloth/", "plugin/MMDCloth/" ]
+      ]
+    }
   }
 ]
